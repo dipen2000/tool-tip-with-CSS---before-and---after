@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap"
+      rel="stylesheet"/>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+    <title>Tool-tip with CSS ::before and ::after</title>
+    <style>
+        body{
+            margin : 0;
+            background-color : black;
+            height : 100vh;
+            width : 100vw;
+            overflow: hidden;
+            display : flex;
+            align-items:center;
+            justify-content:center;
+        }
+        p{
+            font-family: 'Merriweather', serif;
+            font-size : 3rem;
+            cursor : pointer;
+            color : white;
+            position : relative;
+        }
+        p::before{
+            content : "I am Batman";
+            position : absolute;
+            color : white;
+            font-size : 3.75rem;
+            display : block;
+            background-color : #515155;
+            /* border : 3px solid red; */
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            border-radius: 8px;
+            transform: scale(0);
+            transition : transform 150ms , bottom 150ms;
+            bottom : 0%;
+            white-space : nowrap;
+            left : -30%;
+            padding : 0 0.5em;
+            font-family: 'Bowlby One SC', cursive;
+            color : #FDE311;
+        }
+        p:hover::before{
+            transform: scale(1);
+            bottom : 100%;
+        }
+    </style>
+  </head>
+  <body>
+    <p>Bruce Wayne</p>
+  </body>
+</html>
